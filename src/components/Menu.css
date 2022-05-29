@@ -111,3 +111,64 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 } 
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  margin: 0.5em;
+}
+
+
+#logo {
+  transition: transform 300ms ease;
+  text-align: center;
+}
+
+
+#logo::after {
+  content: '|dev';
+  font-weight: 400;
+  position: absolute;
+  opacity: 0;
+  left: 4.1em;
+  transform: translateX(-1em);
+  transition: transform 300ms ease;
+  animation: sheen2 0.3s ease forwards;
+}
+
+[data-type="title"] {
+  transition: transform 300ms ease;
+  margin-left: 1em;
+}
+
+[data-type="title"]:hover,
+[data-type="title"]:focus {
+  transform: translateX(-0.5em);
+}
+
+[data-type="title"]:hover #logo::after,
+[data-type="title"]:focus #logo::after {
+  transition: transform 300ms ease;
+  animation: sheen 0.3s ease forwards;
+}
+
+@keyframes sheen {
+  0% {
+    opacity: 0;
+    transform: translateX(-1em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes sheen2 {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-1em);
+  }
+}
