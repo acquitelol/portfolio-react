@@ -7,14 +7,13 @@ import {
   IonContent,
   IonPage
 } from '@ionic/react';
-import { useParams } from 'react-router';
 import ExploreContainer from '../components/ExploreContainer'
 import './Page.css';
 
 
 const Page: React.FC = () => {
 
-  let { name } = useParams<{ name: string; }>();
+  let name = window.location.pathname.slice(6)
 
   console.log(name)
   let one = name.split('', 1)
