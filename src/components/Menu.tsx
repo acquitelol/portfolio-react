@@ -11,7 +11,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, heartOutline, homeOutline, homeSharp, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { heartOutline, homeOutline, homeSharp, heartSharp, flameOutline, flameSharp, folderOpenOutline, folderOpenSharp} from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -31,20 +31,20 @@ const appPages: AppPage[] = [
   {
     title: 'About Me',
     url: '/page/About',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    iosIcon: flameOutline,
+    mdIcon: flameSharp
   },
   {
     title: 'Projects',
     url: '/page/Projects',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
+    iosIcon: folderOpenOutline,
+    mdIcon: folderOpenSharp
   },
   {
     title: 'Contact',
     url: '/page/Contact',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
+    iosIcon: heartOutline,
+    mdIcon: heartSharp
   }
 ];
 
@@ -73,15 +73,6 @@ const Menu: React.FC = () => {
           
         </IonList>
         <div id='footer'>Created by Acquite.</div>
-        {/* <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon slot="start" icon={bookmarkOutline} />
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
-          ))}
-        </IonList> */}
       </IonContent>
     </IonMenu>
   );

@@ -130,32 +130,37 @@ ion-item.selected {
   font-weight: 400;
   position: absolute;
   opacity: 0;
-  left: 4.1em;
-  transform: translateX(-1em);
+  left: 5.60rem;
+  transform: translateX(-1rem);
   transition: transform 300ms ease;
   animation: sheen2 0.3s ease forwards;
 }
 
+#logo.ios::after {
+  left: 6rem;
+}
+
+
 [data-type="title"] {
   transition: transform 300ms ease;
-  margin-left: 1em;
+  margin-left: 1rem;
 }
 
 [data-type="title"]:hover,
 [data-type="title"]:focus {
-  transform: translateX(-0.5em);
+  transform: translateX(-0.5rem);
 }
 
 [data-type="title"]:hover #logo::after,
 [data-type="title"]:focus #logo::after {
   transition: transform 300ms ease;
-  animation: sheen 0.3s ease forwards;
+  animation: sheen 300ms ease forwards;
 }
 
 @keyframes sheen {
   0% {
     opacity: 0;
-    transform: translateX(-1em);
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -169,6 +174,6 @@ ion-item.selected {
   }
   100% {
     opacity: 0;
-    transform: translateX(-1em);
+    transform: translateX(-1rem);
   }
 }
