@@ -1,0 +1,9 @@
+[data-type=content1] {
+    transform: translateY(2rem);
+    text-align: center;
+}
+
+
+#title {
+    font-size: 20px;
+}

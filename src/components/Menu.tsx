@@ -24,25 +24,25 @@ interface AppPage {
 const appPages: AppPage[] = [
   {
     title: 'Home',
-    url: '/page/Home',
+    url: '/page/home',
     iosIcon: homeOutline,
     mdIcon: homeSharp
   },
   {
     title: 'About Me',
-    url: '/page/About',
+    url: '/page/about',
     iosIcon: flameOutline,
     mdIcon: flameSharp
   },
   {
     title: 'Projects',
-    url: '/page/Projects',
+    url: '/page/projects',
     iosIcon: folderOpenOutline,
     mdIcon: folderOpenSharp
   },
   {
     title: 'Contact',
-    url: '/page/Contact',
+    url: '/page/contact',
     iosIcon: heartOutline,
     mdIcon: heartSharp
   }
