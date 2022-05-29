@@ -28,6 +28,7 @@ const Page: React.FC = () => {
                     <IonTitle size="large">Projects</IonTitle>
                 </IonToolbar>
                 </IonHeader>
+                <hr></hr>
                 <IonContent data-type='content1'>
                 <IonLabel id='title'>
                     This is the <strong>Projects</strong> Page. 🪐
