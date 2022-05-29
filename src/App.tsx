@@ -55,10 +55,6 @@ const App: React.FC = () => {
               <Redirect to='/page/contact' />
               <Contact />
             </Route>
-            <Route path="/page/error" exact={true}>
-              <Redirect to='/page/error' />
-              <Page />
-            </Route>
             <Route path='/' exact={true}>
               <Redirect to='/page/home' />
             </Route>
