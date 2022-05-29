@@ -132,8 +132,7 @@ ion-item.selected {
   opacity: 0;
   left: 5.60rem;
   transform: translateX(-1rem);
-  transition: transform 300ms ease;
-  animation: sheen2 300ms ease forwards;
+  transition: transform 300ms ease, opacity 300ms ease;
 }
 
 #logo.ios::after {
@@ -153,28 +152,7 @@ ion-item.selected {
 
 [data-type="title"]:hover #logo::after,
 [data-type="title"]:focus #logo::after {
-  transition: transform 300ms ease;
-  animation: sheen 300ms ease forwards;
-  animation-delay: 200ms;
-}
-
-@keyframes sheen {
-  0% {
-    opacity: 0;
-    transform: translateX(-1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes sheen2 {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-1rem);
-  }
+  transition: transform 300ms ease, opacity 300ms ease;
+  opacity: 1;
+  transform: translateX(0);
 }
