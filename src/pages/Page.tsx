@@ -13,7 +13,7 @@ import './Page.css';
 
 const Page: React.FC = () => {
 
-  let name = window.location.pathname.slice(6)
+  let name = window.location.pathname.slice(6).replaceAll('%20', ' ')
 
   console.log(name)
   let one = name.split('', 1)
