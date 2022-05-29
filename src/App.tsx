@@ -36,12 +36,6 @@ const App: React.FC = () => {
         <IonSplitPane contentId="main">
           <Menu />
           <IonRouterOutlet id='main'>
-            <Route path="/" exact={true}>
-              <Redirect to="/page/home" />
-            </Route>
-            <Route path="/page/" exact={true}>
-              <Redirect to="/page/home" />
-            </Route>
             <Route path="/page/:name" exact={false}>
               <Page />
             </Route>
