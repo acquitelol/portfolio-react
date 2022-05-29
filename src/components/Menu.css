@@ -133,7 +133,7 @@ ion-item.selected {
   left: 5.60rem;
   transform: translateX(-1rem);
   transition: transform 300ms ease;
-  animation: sheen2 0.3s ease forwards;
+  animation: sheen2 300ms ease forwards;
 }
 
 #logo.ios::after {
@@ -155,6 +155,7 @@ ion-item.selected {
 [data-type="title"]:focus #logo::after {
   transition: transform 300ms ease;
   animation: sheen 300ms ease forwards;
+  animation-delay: 200ms;
 }
 
 @keyframes sheen {
