@@ -9,16 +9,26 @@ import {
 import './Page.css';
 import {Fragment} from 'react'
 
+const getName = () => {
+  let name = window.location.pathname
+  let formatted = name.slice(1).replaceAll('%20', ' ')
+
+  if (formatted==='') return "Invalid"
+
+
+  let one = formatted.split('', 1)
+  let two = [one[0], formatted.slice(1)]
+  console.log(one[0])
+  one[0] = one[0].toUpperCase();
+  console.log(one[0])
+  let final = one[0]+two[1]
+
+  return final
+}
 
 const Page: React.FC = () => {
 
-  let name = window.location.pathname.slice(1).replaceAll('%20', ' ')
-
-  console.log(name)
-  let one = name.split('', 1)
-  let two = [one[0], name.slice(1)]
-  one[0] = one[0].toUpperCase();
-  name = one[0]+two[1]
+  let name = getName()
 
   return (
     <Fragment>

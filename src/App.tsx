@@ -31,17 +31,28 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-setupIonicReact();
+const getName = () => {
+  let name = window.location.pathname
+  let formatted = name.slice(1).replaceAll('%20', ' ')
+
+  if (formatted==='') return "Invalid"
+
+
+  let one = formatted.split('', 1)
+  let two = [one[0], formatted.slice(1)]
+  console.log(one[0])
+  one[0] = one[0].toUpperCase();
+  console.log(one[0])
+  let final = one[0]+two[1]
+
+  return final
+}
+
+setupIonicReact()
 
 const App: React.FC = () => {
 
-  let name = window.location.pathname.slice(1).replaceAll('%20', ' ')
-
-  console.log(name)
-  let one = name.split('', 1)
-  let two = [one[0], name.slice(1)]
-  one[0] = one[0].toUpperCase();
-  name = one[0]+two[1]
+  let name = getName()
 
   return (
     <IonApp>
@@ -53,6 +64,10 @@ const App: React.FC = () => {
               {/*Default Path */}
               <Route path='/' exact={true}>
                 <Redirect to='/home' />
+                <IonPage>
+                  <Page />
+                  <Home />
+                </IonPage>
               </Route>
 
               {/*Invalid Path */}
