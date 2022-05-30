@@ -1,6 +1,8 @@
 import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact, IonPage } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
+
+/* Required Page TypeScript Files */
 import Menu from './components/Menu';
 import Page from './pages/Page';
 import Home from './pages/Home';
@@ -97,7 +99,7 @@ const App: React.FC = () => {
                   <Contact />
                 </IonPage>
               </Route>
-              
+
             </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
