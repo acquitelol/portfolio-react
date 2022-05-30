@@ -7,7 +7,7 @@ import {
   IonContent,
   IonPage
 } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer'
+import InvalidContainer from '../components/InvalidContainer'
 import './Page.css';
 
 
@@ -39,7 +39,7 @@ const Page: React.FC = () => {
               <IonTitle size="large">{name}</IonTitle>
           </IonToolbar>
           </IonHeader>
-          <ExploreContainer name={name} />
+          <InvalidContainer name={name} />
       </IonContent>
     </IonPage>
   )
