@@ -44,11 +44,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -73,5 +69,5 @@
     "@ionic/cli": "6.19.1",
     "gh-pages": "^4.0.0"
   },
-  "description": "A portfolio website build in React."
+  "description": "A portfolio website built in React."
 }
