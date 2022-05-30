@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.2.7",
   "private": true,
-  "homepage": "https://acquite.github.io",
+  "homepage": "https://acquite.lol/",
   "dependencies": {
     "@capacitor/app": "1.1.1",
     "@capacitor/core": "3.5.1",
