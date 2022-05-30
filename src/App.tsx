@@ -56,9 +56,10 @@ const App: React.FC = () => {
 
   return (
     <IonApp>
-      <IonReactRouter>
-        <IonSplitPane contentId="main">
-          <Menu />
+      <IonPage>
+        <IonReactRouter>
+          <IonSplitPane contentId="main">
+            <Menu />
             <IonRouterOutlet id='main'>
 
               {/*Default Path */}
@@ -114,10 +115,11 @@ const App: React.FC = () => {
                   <Contact />
                 </IonPage>
               </Route>
-
+              
             </IonRouterOutlet>
-        </IonSplitPane>
-      </IonReactRouter>
+          </IonSplitPane>
+        </IonReactRouter>
+      </IonPage>
     </IonApp>
   );
 };
