@@ -1,6 +1,6 @@
 {
-  "short_name": "Ionic App",
-  "name": "My Ionic App",
+  "short_name": "Acquite Portfolio",
+  "name": "React-Portfolio",
   "icons": [
     {
       "src": "assets/icon/favicon.png",
