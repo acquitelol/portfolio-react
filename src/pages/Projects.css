@@ -1,9 +1,14 @@
 [data-type=content1] {
-    transform: translateY(2rem);
+    position: absolute;
+    bottom: -6rem;
     text-align: center;
 }
 
 
 #title {
     font-size: 20px;
+}
+
+.padding-custom {
+    margin: 0 20%;
 }

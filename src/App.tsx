@@ -1,4 +1,4 @@
-import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact, IonPage } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Menu from './components/Menu';
@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import InvalidContainer from './components/InvalidContainer'
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -30,39 +32,73 @@ import './theme/variables.css';
 setupIonicReact();
 
 const App: React.FC = () => {
+
+  let name = window.location.pathname.slice(1).replaceAll('%20', ' ')
+
+  console.log(name)
+  let one = name.split('', 1)
+  let two = [one[0], name.slice(1)]
+  one[0] = one[0].toUpperCase();
+  name = one[0]+two[1]
+
   return (
     <IonApp>
       <IonReactRouter>
         <IonSplitPane contentId="main">
           <Menu />
-          <IonRouterOutlet id='main'>
-            <Route path='/' exact={true}>
-              <Redirect to='/home' />
-            </Route>
-            <Route path='/:name' exact={true}>
-              <Redirect to={window.location.pathname} />
-              <Page />
-            </Route>
-            <Route path="/home" exact={true}>
-              <Redirect to='/home' />
-              <Home />
-            </Route>
-            <Route path="/about" exact={true}>
-              <Redirect to='/about' />
-              <About />
-            </Route>
-            <Route path="/projects" exact={true}>
-              <Redirect to='/projects' />
-              <Projects />
-            </Route>
-            <Route path="/contact" exact={true}>
-              <Redirect to='/contact' />
-              <Contact />
-            </Route>
-            
-            
-          </IonRouterOutlet>
-          
+            <IonRouterOutlet id='main'>
+
+              {/*Default Path */}
+              <Route path='/' exact={true}>
+                <Redirect to='/home' />
+              </Route>
+
+              {/*Invalid Path */}
+              <Route path='/:name' exact={true}>
+                <Redirect to={window.location.pathname} />
+                <IonPage>
+                  <Page />
+                  <InvalidContainer name={name}/>
+                </IonPage>
+              </Route>
+
+              {/*Home Path */}
+              <Route path="/home" exact={true}>
+                <Redirect to='/home' />
+                <IonPage>
+                  <Page />
+                  <Home />
+                </IonPage>
+              </Route>
+
+              {/*About Path */}
+              <Route path="/about" exact={true}>
+                <Redirect to='/about' />
+                <IonPage>
+                  <Page />
+                  <About />
+                </IonPage>
+              </Route>
+
+              {/*Projects Path */}
+              <Route path="/projects" exact={true}>
+                <Redirect to='/projects' />
+                <IonPage>
+                  <Page />
+                  <Projects />
+                </IonPage>
+              </Route>
+
+              {/*Contact Path */}
+              <Route path="/contact" exact={true}>
+                <Redirect to='/contact' />
+                <IonPage>
+                  <Page />
+                  <Contact />
+                </IonPage>
+              </Route>
+              
+            </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
     </IonApp>

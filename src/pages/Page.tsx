@@ -5,10 +5,9 @@ import {
   IonMenuButton,
   IonTitle,
   IonContent,
-  IonPage
 } from '@ionic/react';
-import InvalidContainer from '../components/InvalidContainer'
 import './Page.css';
+import {Fragment} from 'react'
 
 
 const Page: React.FC = () => {
@@ -22,7 +21,7 @@ const Page: React.FC = () => {
   name = one[0]+two[1]
 
   return (
-    <IonPage>
+    <Fragment>
       <IonHeader>
         <IonToolbar>
         <IonButtons slot="start">
@@ -39,9 +38,8 @@ const Page: React.FC = () => {
               <IonTitle size="large">{name}</IonTitle>
           </IonToolbar>
           </IonHeader>
-          <InvalidContainer name={name} />
       </IonContent>
-    </IonPage>
+    </Fragment>
   )
 };
 

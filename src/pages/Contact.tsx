@@ -1,44 +1,24 @@
 import { 
-    IonHeader,
-    IonToolbar,
-    IonButtons,
-    IonMenuButton,
-    IonTitle,
     IonContent,
-    IonPage,
     IonNote,
     IonLabel
 } from '@ionic/react';
 import './Contact.css';
+import {Fragment} from 'react'
 
 const Page: React.FC = () => {
     return (
-        <IonPage>
-            <IonHeader>
-            <IonToolbar>
-            <IonButtons slot="start">
-                <IonMenuButton />
-            </IonButtons>
-            <IonTitle>Contact</IonTitle>
-            </IonToolbar>
-            </IonHeader>
-            <IonContent>
-                <IonHeader collapse="condense">
-                <IonToolbar>
-                    <IonTitle size="large">Contact</IonTitle>
-                </IonToolbar>
-                </IonHeader>
-                <hr></hr>
-                <IonContent data-type='content1'>
-                <IonLabel id='title'>
+        <Fragment>
+            <hr></hr>
+            <IonContent data-type='content1'>
+                <IonLabel id='title' className='padding-custom'>
                     This is the <strong>Contact</strong> Page. 🤦‍♂️
                 </IonLabel> <br></br>
-                <IonNote id='sub'>
+                <IonNote id='sub' className='padding-custom'>
                     Welcome to the Contact route of my <strong>testing</strong> site built in react.
                 </IonNote>
             </IonContent>
-            </IonContent>
-        </IonPage>
+        </Fragment>
     );
   };
   
