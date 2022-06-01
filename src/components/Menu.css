@@ -112,10 +112,12 @@ ion-item.selected {
   --color: var(--ion-color-primary);
 } 
 
+
 #footer {
   position: fixed;
   bottom: 0;
   margin: 0.5em;
+  font-size: 14px;
 }
 
 
@@ -124,6 +126,9 @@ ion-item.selected {
   text-align: center;
 }
 
+.smaller {
+  width: 20%
+}
 
 #logo::after {
   content: '|dev';

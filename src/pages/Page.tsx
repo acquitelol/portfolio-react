@@ -4,37 +4,35 @@ import {
   IonButtons,
   IonMenuButton,
   IonTitle,
-  IonContent,
 } from '@ionic/react';
 import './Page.css';
 import {Fragment} from 'react'
 
 interface Props {
   name: string;
+  object: object;
 }
 
-const Page: React.FC<Props> = ({ name }) => {
+const Page: React.FC<Props> = ({ name, object}) => {
 
   return (
     <Fragment>
-      <IonHeader>
-        <IonToolbar>
-        <IonButtons slot="start">
-            <IonMenuButton />
-        </IonButtons>
-        <IonTitle>{name}</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-
-
-      <IonContent>
-          <IonHeader collapse="condense">
-          <IonToolbar>
-              <IonTitle size="large">{name}</IonTitle>
-          </IonToolbar>
+      
+        <IonHeader>
+            
+            <IonToolbar>
+            <IonButtons slot="start">
+                <IonMenuButton />
+                
+            </IonButtons>
+            <IonTitle className='title'>{name}</IonTitle>
+            </IonToolbar>
+            
           </IonHeader>
-      </IonContent>
+
+          {object}
     </Fragment>
+    
   )
 };
 

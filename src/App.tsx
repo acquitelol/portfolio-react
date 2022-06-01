@@ -11,7 +11,6 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import InvalidContainer from './components/InvalidContainer'
 
-
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -46,11 +45,9 @@ const getName = () => {
   return final
 }
 
-
 setupIonicReact()
 
 const App: React.FC = () => {
-
   let location = useLocation()
   const [name, setName] = useState(getName())
 
@@ -58,7 +55,6 @@ const App: React.FC = () => {
     setName(getName())
   }, [location])
 
-  
   return (
     <IonApp>
       <IonPage>
@@ -70,39 +66,32 @@ const App: React.FC = () => {
               <Route path='/:name' exact={true}>
                 <Redirect to={window.location.pathname} />
                 <IonPage>
-                  <Page name={name} />
-                  <InvalidContainer name={name} />
+                  <Page name={name} object={<InvalidContainer name={name} />}/>
+                  
                 </IonPage>
               </Route>
 
-              
               {/*Default Path */}
               <Route path='/' exact={true}>
                 <Redirect to='/home' />
                 <IonPage>
-                  <Page name={name} />
-                  <Home />
+                  <Page name={name} object={<Home />} />
                 </IonPage>
               </Route>
-
-              
 
               {/*Home Path */}
               <Route path="/home" exact={true}>
                 <Redirect to='/home' />
                 <IonPage>
-                  <Page name={name} />
-                  <Home />
+                  <Page name={name} object={<Home />} />
                 </IonPage>
               </Route>
-
 
               {/*About Path */}
               <Route path="/about" exact={true}>
                 <Redirect to='/about' />
                 <IonPage>
-                  <Page name={name} />
-                  <About />
+                  <Page name={name} object={<About />} />
                 </IonPage>
               </Route>
 
@@ -110,8 +99,7 @@ const App: React.FC = () => {
               <Route path="/projects" exact={true}>
                 <Redirect to='/projects' />
                 <IonPage>
-                  <Page name={name} />
-                  <Projects />
+                  <Page name={name} object={<Projects />} />
                 </IonPage>
               </Route>
 
@@ -119,8 +107,7 @@ const App: React.FC = () => {
               <Route path="/contact" exact={true}>
                 <Redirect to='/contact' />
                 <IonPage>
-                  <Page name={name} />
-                  <Contact />
+                  <Page name={name} object={<Contact />} />
                 </IonPage>
               </Route>
 
