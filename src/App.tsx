@@ -1,6 +1,6 @@
 import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact, IonPage } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
-import { Redirect, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Redirect, Route, useLocation } from 'react-router-dom';
 
 /* Required Page TypeScript Files */
 import Menu from './components/Menu';
@@ -48,52 +48,62 @@ const getName = () => {
   return final
 }
 
+
 setupIonicReact()
 
 const App: React.FC = () => {
 
-  let name = getName()
+  let location = useLocation()
+  const [name, setName] = useState(getName())
 
+  useEffect(() => {
+    setName(getName())
+  }, [location])
+
+  
   return (
     <IonApp>
       <IonPage>
-        <IonReactRouter>
           <IonSplitPane contentId="main">
             <Menu />
             <IonRouterOutlet id='main'>
-
-              {/*Default Path */}
-              <Route path='/' exact={true}>
-                <Redirect to='/home' />
-                <IonPage>
-                  <Page />
-                  <Home />
-                </IonPage>
-              </Route>
 
               {/*Invalid Path */}
               <Route path='/:name' exact={true}>
                 <Redirect to={window.location.pathname} />
                 <IonPage>
-                  <Page />
-                  <InvalidContainer name={name}/>
+                  <Page name={name} />
+                  <InvalidContainer name={name} />
                 </IonPage>
               </Route>
+
+              
+              {/*Default Path */}
+              <Route path='/' exact={true}>
+                <Redirect to='/home' />
+                <IonPage>
+                  <Page name={name} />
+                  <Home />
+                </IonPage>
+              </Route>
+
+              
 
               {/*Home Path */}
               <Route path="/home" exact={true}>
                 <Redirect to='/home' />
                 <IonPage>
-                  <Page />
+                  <Page name={name} />
                   <Home />
                 </IonPage>
               </Route>
+
 
               {/*About Path */}
               <Route path="/about" exact={true}>
                 <Redirect to='/about' />
                 <IonPage>
-                  <Page />
+                  <Page name={name} />
                   <About />
                 </IonPage>
               </Route>
@@ -102,7 +112,7 @@ const App: React.FC = () => {
               <Route path="/projects" exact={true}>
                 <Redirect to='/projects' />
                 <IonPage>
-                  <Page />
+                  <Page name={name} />
                   <Projects />
                 </IonPage>
               </Route>
@@ -111,14 +121,13 @@ const App: React.FC = () => {
               <Route path="/contact" exact={true}>
                 <Redirect to='/contact' />
                 <IonPage>
-                  <Page />
+                  <Page name={name} />
                   <Contact />
                 </IonPage>
               </Route>
-              
+
             </IonRouterOutlet>
           </IonSplitPane>
-        </IonReactRouter>
       </IonPage>
     </IonApp>
   );
