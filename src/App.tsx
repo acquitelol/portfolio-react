@@ -40,9 +40,7 @@ const getName = () => {
 
   let one = formatted.split('', 1)
   let two = [one[0], formatted.slice(1)]
-  console.log(one[0])
   one[0] = one[0].toUpperCase();
-  console.log(one[0])
   let final = one[0]+two[1]
 
   return final

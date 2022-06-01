@@ -16,6 +16,8 @@ const Page: React.FC = () => {
                     </IonLabel> <br></br>
                     <IonNote id='sub' className='padding-custom'>
                         Welcome to the Home route of my <strong>testing</strong> site built in react.
+                        <hr />
+                        (This site is <strong>entirely experimental</strong> and many changes are inevitable.)
                     </IonNote>
             </IonContent>
         </Fragment>

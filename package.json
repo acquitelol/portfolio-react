@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.3.6-Alpha",
+  "version": "0.3.7-Alpha",
   "private": true,
   "homepage": "https://acquite.lol/",
   "dependencies": {
