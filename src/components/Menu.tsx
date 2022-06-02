@@ -55,22 +55,17 @@ appPages.forEach((appPage) => {
     routes.push(appPage.url)
 }) as any;
 
-
 const Menu: React.FC = () => {
-
   const location = useLocation();
-
   const checkFor = () => {
     let checked = 0
     routes.forEach((key: any, index: any) => {
       console.log(location.pathname, key)
       if (location.pathname !== key) {checked++};
     })
-
     console.log(checked)
     if (checked===4) {window.location.reload()}
   }
-  
   return (
     <IonMenu contentId="main" type="overlay">
       <IonContent>

@@ -93,17 +93,17 @@
 
 #gluta1.flipped,
 #gluta2.flipped {
-    transform: perspective(1000px) rotateY(180deg);
+    transform: perspective(1000px) rotateY(180deg) scale(1);
 }
 
 #gluta1.flipped:hover ,
 #gluta1.flipped:focus {
-    transform: perspective(1000px) rotateY(185deg) rotateX(15deg);
+    transform: perspective(1000px) rotateY(185deg) rotateX(15deg) scale(1.05);
 }
 
 #gluta2.flipped:hover ,
 #gluta2.flipped:focus {
-    transform: perspective(1000px) rotateY(175deg) rotateX(-15deg);
+    transform: perspective(1000px) rotateY(175deg) rotateX(-15deg) scale(1.05);
 }
 
 
