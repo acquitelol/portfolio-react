@@ -2,7 +2,9 @@
     --scale: 1;
     --ypos: 0px;
     --opacity: 0.2;
-    --projScale: 1
+    --projScale: 1;
+    --rotatexdeg: 0
+    --rotateydeg: 0
 }
 
 [data-type=content1] {
@@ -22,12 +24,16 @@
 
 #gluta1:hover,
 #gluta1:focus {
-    --scale: 1.05
+    --scale: 1.05;
+    --rotatexdeg: 5deg;
+    --rotateydeg: 5deg
 }
 
 #gluta2:hover,
 #gluta2:focus {
-    --scale: 1.05
+    --scale: 1.05;
+    --rotatexdeg: -5deg;
+    --rotateydeg: -5deg
 }
 
 #gluta1, #gluta2 {
@@ -36,18 +42,18 @@
     display: inline;
     justify-content: center;
     align-items: center;
-    margin: 2rem -2rem -2rem -2rem;
-    transform: scale(var(--scale));
-    transition: transform 250ms ease;
+    margin: 1em -2rem -1em -2rem;
+    transform: perspective(1000px) scale(var(--scale)) rotateX(var(--rotatexdeg)) rotateY(var(--rotateydeg));
+    transition: transform 800ms ease;
     cursor: pointer;
 }
 
 #gluta1 {
-    animation: rotate 500ms ease;
+    animation: rotate 600ms ease;
 }
 
 #gluta2 {
-    animation: rotate-backwards 500ms ease;
+    animation: rotate-backwards 600ms ease;
 }
 
 #content-project {
@@ -69,19 +75,38 @@
     border-width: 1px;
     border-color: rgb(90, 90, 90);
     margin-top: 1em;
-    transform: scale(var(--projScale)) translateY(var(--ypos));
+    transform: perspective(800px) scale(var(--projScale)) translateY(var(--ypos)) rotateX(var(--rotatexdeg)) rotateY(var(--rotateydeg)) ;
     box-shadow: 0 0 5px 2px rgba(0,0,0,var(--opacity));
     animation: opacityDown 400ms ease;
-    transition: 300ms ease;
+    transition: 600ms ease;
     
 }
 
 #projTab:hover,
 #projTab:focus {
-    --ypos: -2px;
-    --opacity: 0.4;
-    --projScale: 1.01
+    --opacity: 0.5;
+    --projScale: 1.05;
+    --rotatexdeg: 15deg;
+    --rotateydeg: -5deg;
+    box-shadow: 1px 1px 10px 2px rgba(0,0,0,var(--opacity));
 }
+
+#gluta1.flipped,
+#gluta2.flipped {
+    transform: perspective(1000px) rotateY(180deg);
+}
+
+#gluta1.flipped:hover ,
+#gluta1.flipped:focus {
+    transform: perspective(1000px) rotateY(185deg) rotateX(15deg);
+}
+
+#gluta2.flipped:hover ,
+#gluta2.flipped:focus {
+    transform: perspective(1000px) rotateY(175deg) rotateX(-15deg);
+}
+
+
 
 #gluta-sub {
     padding: 0 1em;
@@ -90,11 +115,11 @@
 
 @keyframes rotate {
     0% {
-        transform: perspective(1000px) rotateX(60deg) scale(1.1);
+        transform: perspective(1000px) rotateX(60deg) rotateY(-5deg) scale(1.1);
         opacity: 0;
     }
     100% {
-        transform: perspective(1000px) rotateX(0deg) scale(1);
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
         opacity: 1;
     }
 }
@@ -112,11 +137,11 @@
 
 @keyframes rotate-backwards {
     0% {
-        transform: perspective(1000px) rotateX(-60deg) scale(1.1);
+        transform: perspective(1000px) rotateX(-60deg) rotateY(5deg) scale(1.1);
         opacity: 0;
     }
     100% {
-        transform: perspective(1000px) rotateX(0deg) scale(1);
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
         opacity: 1;
     }
 }

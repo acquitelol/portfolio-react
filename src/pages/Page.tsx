@@ -17,22 +17,16 @@ const Page: React.FC<Props> = ({ name, object}) => {
 
   return (
     <Fragment>
-      
         <IonHeader>
-            
             <IonToolbar>
             <IonButtons slot="start">
                 <IonMenuButton />
-                
             </IonButtons>
             <IonTitle className='title'>{name}</IonTitle>
             </IonToolbar>
-            
           </IonHeader>
-
           {object}
     </Fragment>
-    
   )
 };
 
