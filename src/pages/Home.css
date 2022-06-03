@@ -106,14 +106,6 @@
     transform: perspective(1000px) rotateY(175deg) rotateX(-15deg) scale(1.05);
 }
 
-#gluta1.flipped {
-    animation: rotate-flipped 600ms ease;
-}
-
-#gluta1.flipped {
-    animation: rotate-flipped-backwards 600ms ease;
-}
-
 
 #gluta-sub {
     padding: 0 1em;
