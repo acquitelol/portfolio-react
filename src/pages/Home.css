@@ -106,6 +106,13 @@
     transform: perspective(1000px) rotateY(175deg) rotateX(-15deg) scale(1.05);
 }
 
+#gluta1.flipped {
+    animation: rotate-flipped 600ms ease;
+}
+
+#gluta1.flipped {
+    animation: rotate-flipped-backwards 600ms ease;
+}
 
 
 #gluta-sub {
@@ -120,6 +127,17 @@
     }
     100% {
         transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate-flipped {
+    0% {
+        transform: perspective(1000px) rotateX(240deg) rotateY(-5deg) scale(1.1);
+        opacity: 0;
+    }
+    100% {
+        transform: perspective(1000px) rotateX(180deg) rotateY(0deg) scale(1);
         opacity: 1;
     }
 }
@@ -142,6 +160,17 @@
     }
     100% {
         transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate-flipped-backwards {
+    0% {
+        transform: perspective(1000px) rotateX(120deg) rotateY(-5deg) scale(1.1);
+        opacity: 0;
+    }
+    100% {
+        transform: perspective(1000px) rotateX(180deg) rotateY(0deg) scale(1);
         opacity: 1;
     }
 }
