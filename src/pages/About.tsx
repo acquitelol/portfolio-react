@@ -24,7 +24,7 @@ const languagesList: Languages[] = [
         description: "I have built many projects with JS including this website with React, a Rich Presence Graphical Application built for mac, and many more."
     },
     {
-        language: "Test",
+        language: "Python",
         timeUsed: '2 years',
         url: 'https://github.com/acquitelol/portfolio-react',
         description: "I've used Python for building simple programs such as Base64 Decoders and Session Request Senders. I have a good undestanding of the syntax as a result."
