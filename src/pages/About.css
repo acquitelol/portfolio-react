@@ -35,11 +35,11 @@
     text-align: center;
     max-width: 80em;
     width: 60vw;
-    min-width: 25em;
+    min-width: 20em;
     max-height: 20em;
     min-height: 10em;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-55%);
     transition: all 300ms ease-out;
     background-color: #383a3e;
     border-radius: 1rem;
@@ -127,4 +127,8 @@
     text-emphasis-color: white !important;
     color: white !important;
     padding: 0 1em;
+}
+
+.about-cards {
+    margin-bottom: 20em;
 }

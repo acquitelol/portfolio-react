@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Page: React.FC<Props> = ( { language, timeUsed, project, description}) => {
-
     return (
         <div className='about-card'>
             <div id='about-card'>

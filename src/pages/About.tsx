@@ -28,17 +28,20 @@ const languagesList: Languages[] = [
         timeUsed: '2 years',
         url: 'https://github.com/acquitelol/portfolio-react',
         description: "I've used Python for building simple programs such as Base64 Decoders and Session Request Senders. I have a good undestanding of the syntax as a result."
+    },
+    {
+        language: "Something",
+        timeUsed: '16 years',
+        url: 'https://github.com/acquitelol/portfolio-react',
+        description: "This is an example of a description and some other stuff and words exist. nullnullnullnullnullnull"
     }
 
 ]
 
 const Page: React.FC = () => {
-
-
     return (
         <>
             <hr></hr>
-            
             <IonContent data-type='content1'>
                 <IonLabel id='title' className='large' data-scale='title'>
                     Hi, I'm <strong>Acquite.</strong> 🔥
@@ -51,22 +54,24 @@ const Page: React.FC = () => {
                         I focus mostly on <strong>JavaScript</strong> such as React but I have a good undestanding of other languages such as <strong>Python</strong> and <strong>Lua</strong>.
                     </IonNote>
                 </div>
-                {languagesList.map((language, index) => {
-                    return (
-                        <div key={index} className={`${index===1 ? 'rotation' : 'rotation-flipped'}`} >
-                            <AboutContainer 
-                                key={index} 
-                                language={language.language} 
-                                timeUsed={language.timeUsed} 
-                                project={language.url} 
-                                description={language.description}
-                            />
-                        </div>
-                    )
-                })}
+                <div className={`about-cards`}>
+                    {languagesList.map((language, index) => {
+                        return (
+                            <div key={index} className={`${index===1 ? 'rotation' : 'rotation-flipped'}`} >
+                                <AboutContainer 
+                                    key={index} 
+                                    language={language.language} 
+                                    timeUsed={language.timeUsed} 
+                                    project={language.url} 
+                                    description={language.description}
+                                />
+                            </div>
+                        )
+                    })}
+                </div>
             </IonContent>
         </>
     );
   };
-  
-  export default Page;
+
+export default Page;
