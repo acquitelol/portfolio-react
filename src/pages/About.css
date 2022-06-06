@@ -25,9 +25,7 @@
 }
 
 [data-scale=title] {
-    font-size: 3rem !important;
-    margin-bottom: 20em !important;
-    padding-bottom: 20em !important;
+    font-size: calc(2rem + 1vw) !important;
 }
 
 #about-card {
@@ -66,7 +64,13 @@
         left: 5%;
         transform: translateX(-5%);
         margin: 1em;
-    }   
+    }
+    
+    [data-scale=title] {
+        font-size: 3rem !important;
+        margin-bottom: 20em !important;
+        padding-bottom: 20em !important;
+    }
 }
 
 .about-title, .about-time, .about-desc, .about-btn {
