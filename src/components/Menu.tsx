@@ -49,8 +49,7 @@ const appPages: AppPage[] = [
     mdIcon: heartSharp
   }
 ];
-
-const routes: any = []
+const routes: string[] = []
 appPages.forEach((appPage) => {
     routes.push(appPage.url)
 }) as any;
@@ -59,7 +58,7 @@ const Menu: React.FC = () => {
   const location = useLocation();
   const checkFor = () => {
     let checked = 0
-    routes.forEach((key: any, index: any) => {
+    routes.forEach((key: any) => {
       console.log(location.pathname, key)
       if (location.pathname !== key) {checked++};
     })
