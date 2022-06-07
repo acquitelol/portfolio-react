@@ -9,7 +9,12 @@
 }
 
 .about {
-  transform: translateY(2em);
+  transform: translateY(0.5em);
+  transition: all 600ms ease;
+}
+
+.about:hover {
+    transform: translateY(0.5em) scale(1.025);
 }
 
 #sub-about {
