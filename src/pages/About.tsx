@@ -20,20 +20,20 @@ const languagesList: Languages[] = [
     {
         language: "Javascript",
         timeUsed: '1 year',
-        url: 'https://github.com/acquitelol/gluta',
+        url: 'https://github.com/acquitelol/',
         description: "I have built many projects with JS including this website with React, a Rich Presence Graphical Application built for mac, and many more."
     },
     {
         language: "Python",
         timeUsed: '2 years',
-        url: 'https://github.com/acquitelol/portfolio-react',
+        url: 'https://github.com/acquitelol/',
         description: "I've used Python for building simple programs such as Base64 Decoders and Session Request Senders. I have a good undestanding of the syntax as a result."
     },
     {
-        language: "Something",
-        timeUsed: '16 years',
-        url: 'https://github.com/acquitelol/portfolio-react',
-        description: "This is an example of a description and some other stuff and words exist. nullnullnullnullnullnull"
+        language: "Breathing air",
+        timeUsed: '14 years',
+        url: 'https://github.com/acquitelol/',
+        description: "I very much enjoy breathing air. It is my life hobby. I have always enjoyed to breathe air, and have done it my entire life. Breathing air is extremely healthy for you."
     }
 ]
 
