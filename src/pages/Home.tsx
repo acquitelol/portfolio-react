@@ -19,15 +19,16 @@ const Page: React.FC = () => {
         <>
             <hr></hr>
             <IonContent data-type='content1'>
-                <IonLabel id='title' className='padding-custom'>
-                    This is the <strong>Home</strong> Page. 🌺
-                </IonLabel> <br></br>
-                <IonNote id='sub' className='padding-custom'>
-                    Welcome to the Home route of my <strong>testing</strong> site built in react.
-                    <br />
-                    (This site is <strong>entirely experimental</strong> and many changes are inevitable.)
-                </IonNote>
-
+                <div className="text-rot">
+                    <IonLabel id='title' className='padding-custom'>
+                        This is the <strong>Home</strong> Page. 🌺
+                    </IonLabel> <br></br>
+                    <IonNote id='sub' className='padding-custom'>
+                        Welcome to the Home route of my <strong>testing</strong> site built in react.
+                        <br />
+                        (This site is <strong>entirely experimental</strong> and many changes are inevitable.)
+                    </IonNote>
+                </div>
                 <div className='gluta'>
                     <img src='./images/gluta-1.png' alt='' width='724px' height='944px' id='gluta1' className={imageToggle1 ? "flipped" : ""} onClick={() => {setImageToggle1(!imageToggle1); console.log(imageToggle1)}}/>
                     <img src='./images/gluta-2.png' alt='' width='724px' height='944px' id='gluta2' className={imageToggle2 ? "flipped" : ""} onClick={() => {setImageToggle2(!imageToggle2); console.log(imageToggle2)}}/>

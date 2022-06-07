@@ -1,143 +1,147 @@
-[data-type=content1] {
-    position: absolute;
-    bottom: -6em;
-    text-align: center;
+[data-type="content1"] {
+  position: absolute;
+  bottom: -6em;
+  text-align: center;
 }
 
-
 .padding-custom {
-    margin: 0 20%;
-    
+  margin: 0 20%;
 }
 
 .about {
-    transform: translateY(2em);
+  transform: translateY(2em);
 }
 
 #sub-about {
-    max-width: 35em;
-    line-height: 1.5;
-    transform: translateY(.5em);
+  max-width: 35em;
+  line-height: 1.5;
+  transform: translateY(0.5em);
 }
 
 #title-about {
-    font-size: 1.25rem !important;
+  font-size: 1.25rem !important;
 }
 
-[data-scale=title] {
-    font-size: calc(2rem + 1vw) !important;
-    animation: rotate 600ms ease;
+[data-scale="title"] {
+  font-size: calc(2rem + 1vw) !important;
 }
 
 #about-card {
-    position: relative;
-    text-align: center;
-    max-width: 80em;
-    width: 60vw;
-    min-width: 20em;
-    max-height: 20em;
-    min-height: 10em;
-    left: 50%;
-    transform: translateX(-55%);
-    transition: all 300ms ease-out;
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(38, 38, 38, 0.585);
-    border-radius: 1rem;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(90, 90, 90);
-    margin: 1em;
-    padding: 1em;
-    
-    box-shadow: 0 0 5px 3px rgba(0,0,0,0.2);
+  position: relative;
+  text-align: center;
+  max-width: 80em;
+  width: 60vw;
+  min-width: 20em;
+  max-height: 20em;
+  min-height: 10em;
+  left: 50%;
+  transform: translateX(-55%);
+  transition: all 300ms ease-out;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(38, 38, 38, 0.585);
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(90, 90, 90);
+  margin: 1em;
+  padding: 1em;
+
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
 }
 
 #about-card:hover {
-    box-shadow: 0 0 10px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 0 10px 8px rgba(0, 0, 0, 0.4);
 }
 
 @media (min-width: 1200px) {
-    #about-card {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        left: 5%;
-        transform: translateX(-5%);
-        margin: 1em;
-    }
-    
-    [data-scale=title] {
-        font-size: 3rem !important;
-        margin-bottom: 20em !important;
-        padding-bottom: 20em !important;
-    }
+  #about-card {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    left: 5%;
+    transform: translateX(-5%);
+    margin: 1em;
+  }
+
+  [data-scale="title"] {
+    font-size: 3rem !important;
+    margin-bottom: 20em !important;
+    padding-bottom: 20em !important;
+  }
 }
 
-.about-title, .about-time, .about-desc, .about-btn {
-    margin: 0.5em 1em;
+.about-title,
+.about-time,
+.about-desc,
+.about-btn {
+  margin: 0.5em 1em;
 }
 
 .about-title {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .rotation {
-    animation: rotate 600ms ease;
+  animation: rotate 600ms ease;
 }
 
 .rotation-flipped {
-    animation: rotate-backwards 600ms ease;
+  animation: rotate-backwards 600ms ease;
 }
 
 .rotation,
 .rotation-flipped {
-    transition: transform 800ms ease;
-    transform: perspective(1000px) rotateY(0deg) scale(1);
+  transition: transform 800ms ease;
+  transform: perspective(1000px) rotateY(0deg) scale(1);
 }
 
-.rotation:hover ,
+.rotation:hover,
 .rotation:focus {
-    transform: perspective(1000px) rotateY(2deg) rotateX(10deg) scale(1.01);
+  transform: perspective(1000px) rotateY(2deg) rotateX(10deg) scale(1.01);
 }
 
-.rotation-flipped:hover ,
+.rotation-flipped:hover,
 .rotation-flipped:focus {
-    transform: perspective(1000px) rotateY(-2deg) rotateX(-10deg) scale(1.01);
+  transform: perspective(1000px) rotateY(-2deg) rotateX(-10deg) scale(1.01);
+}
+
+.text-rot {
+    animation: rotate 600ms ease;
 }
 
 @keyframes rotate {
-    0% {
-        transform: perspective(1000px) rotateX(45deg) rotateY(-5deg) scale(1.1);
-        opacity: 0;
-    }
-    100% {
-        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
-        opacity: 1;
-    }
+  0% {
+    transform: perspective(1000px) rotateX(45deg) rotateY(-5deg) scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes rotate-backwards {
-    0% {
-        transform: perspective(1000px) rotateX(-45deg) rotateY(5deg) scale(1.1);
-        opacity: 0;
-    }
-    100% {
-        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
-        opacity: 1;
-    }
+  0% {
+    transform: perspective(1000px) rotateX(-45deg) rotateY(5deg) scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
 }
 
 .about-card {
-    transform: translateY(3em);
+  transform: translateY(3em);
 }
 
 .about-btn span {
-    text-emphasis-color: white !important;
-    color: white !important;
-    padding: 0 1em;
+  text-emphasis-color: white !important;
+  color: white !important;
+  padding: 0 1em;
 }
 
 .about-cards {
-    margin-bottom: 20em;
+  margin-bottom: 20em;
 }

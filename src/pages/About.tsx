@@ -35,7 +35,6 @@ const languagesList: Languages[] = [
         url: 'https://github.com/acquitelol/portfolio-react',
         description: "This is an example of a description and some other stuff and words exist. nullnullnullnullnullnull"
     }
-
 ]
 
 const Page: React.FC = () => {
@@ -43,9 +42,11 @@ const Page: React.FC = () => {
         <>
             <hr></hr>
             <IonContent data-type='content1'>
-                <IonLabel id='title' className='large' data-scale='title'>
-                    Hi, I'm <strong>Acquite.</strong> 🔥
-                </IonLabel> <br />
+                <div className='text-rot'>
+                    <IonLabel id='title' className='large' data-scale='title'>
+                        Hi, I'm <strong>Acquite.</strong> 🔥
+                    </IonLabel>
+                </div> <br />
                 <div className='about'>
                     <IonLabel id='title-about' className='padding-custom' data-scale='sub'>
                         I am a <strong>14 year old</strong> Developer. 
