@@ -4,21 +4,31 @@ import {
     IonLabel,
     IonItem,
     IonIcon,
+    IonHeader,
 } from '@ionic/react';
 import './Home.css';
-import {Fragment, useState} from 'react'
+import {useState} from 'react'
 import { folderOpenOutline, folderOpenSharp } from 'ionicons/icons';
+import Typewriter from '../components/Typewriter'
 
 
 const Page: React.FC = () => {
 
+
     const [imageToggle1, setImageToggle1] = useState(false)
     const [imageToggle2, setImageToggle2] = useState(false)
+
+
 
     return (
         <>
             <hr></hr>
+
             <IonContent data-type='content1'>
+                <IonHeader className='header-home'>
+                    I'm a <Typewriter />
+                    <div className='header-blink'></div>
+                </IonHeader>
                 <div className="text-rot">
                     <IonLabel id='title' className='padding-custom'>
                         This is the <strong>Home</strong> Page. 🌺
