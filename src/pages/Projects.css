@@ -4,11 +4,28 @@
     text-align: center;
 }
 
-
-#title {
-    font-size: 20px;
+:root {
+  --animationSpeed: 1.5s;
+  --animationCurve: cubic-bezier(.42, 0.25, 0.25, 1)
 }
 
+#title {
+    font-size: 30px !important;
+}
+
+
+.mainTitle {
+    animation: fadeReverse var(--animationSpeed) var(--animationCurve);
+}
+
+
+.subTitle {
+  animation: fade var(--animationSpeed) var(--animationCurve);
+}
+
+.pos {
+  transform: translateY(-1em);
+}
 .padding-custom {
     margin: 0 10%;
 }
@@ -19,7 +36,7 @@
     max-width: 80em;
     width: 60vw;
     min-width: 20em;
-    max-height: 20em;
+    max-height: 30em;
     min-height: 10em;
     left: 50%;
     transform: translateX(-55%);
@@ -56,6 +73,11 @@
       margin-bottom: 20em !important;
       padding-bottom: 20em !important;
     }
+    
+    .project-icon {
+        margin-top: 1.25em !important;
+        margin-bottom: 0em !important;
+    }
   }
   
   .projects-title,
@@ -68,13 +90,17 @@
   .projects-title {
     font-size: 2rem;
   }
+
+  .projects-desc {
+      line-height: 1.5;
+  }
   
   .rotation {
-    animation: rotate 600ms ease;
+    animation: rotate var(--animationSpeed) var(--animationCurve);
   }
   
   .rotation-flipped {
-    animation: rotate-backwards 600ms ease;
+    animation: rotate-backwards var(--animationSpeed) var(--animationCurve);
   }
   
   .rotation,
@@ -94,10 +120,22 @@
   }
   
   .text-rot {
-      animation: rotate 600ms ease;
+      animation: rotateNormal 600ms ease;
   }
   
   @keyframes rotate {
+    0% {
+      transform: perspective(1000px) rotateX(45deg) rotateY(-5deg) scale(1.1) translateX(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1) translateX(0%);
+      opacity: 1;
+    }
+  }
+
+    
+  @keyframes rotateNormal {
     0% {
       transform: perspective(1000px) rotateX(45deg) rotateY(-5deg) scale(1.1);
       opacity: 0;
@@ -107,43 +145,154 @@
       opacity: 1;
     }
   }
-  
+
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+    
+  @keyframes fadeReverse {
+    0.0%{
+        transform: scale(2);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1 );
+    }
+  }
   @keyframes rotate-backwards {
     0% {
-      transform: perspective(1000px) rotateX(-45deg) rotateY(5deg) scale(1.1);
+      transform: perspective(1000px) rotateX(-45deg) rotateY(5deg) scale(1.1) translateX(10%);
       opacity: 0;
     }
     100% {
-      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1) translateX(0%);
       opacity: 1;
     }
   }
   
-  .about-card {
+  .projects-card {
     transform: translateY(3em);
   }
   
-  .about-btn span {
+  .projects-btn span {
     text-emphasis-color: white !important;
     color: white !important;
     padding: 0 1em;
   }
   
-  .about-cards {
+  .projects-btn, .clicked {
+    padding: 1em 2.5em;
+    border: none;
+    background-color: rgb(61, 61, 61);
+    border-radius: 1rem;
+    transition: all 500ms ease;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .clicked {
+    padding: 1.25em 3.5em;
+    margin: 2em 0.5em;
+  }
+
+  .projects-btn > div {
+      font-size: 1rem;
+      transition: all 500ms ease;
+  }
+
+
+  .clicked > div {
+    font-size: 1rem;
+    transition: all 500ms ease;
+}
+
+  .projects-cards {
     margin-bottom: 20em;
   }
   
+  .project-icon {
+        margin-top: 1.25em;
+        margin-bottom: 1em;
+        transform: scale(3);
+  }
+
+  .projects-btn:hover {
+      background-color: black;
+  }
+
+
+  .clicked:hover {
+    background-color: black;
+  }
+
+
+  #project-img {
+      position: absolute;
+      width: 1.4rem;
+      transform: translateY(-1.25rem) translateX(0.75em);
+      opacity: 0;
+      transition: all 500ms ease;
+  }
+
+  .projects-btn:hover #github {
+      transform: translateX(-0.5em);
+  }
+
+  .projects-btn:hover #project-img {
+    transform: translateY(-1.25rem) translateX(1.5em);
+    opacity: 1;
+}
+
+    .clicked:hover #github {
+      transform: translateX(-0.5em);
+    }
+
+    .clicked:hover #project-img {
+      transform: translateY(-1.25rem) translateX(1.5em);
+      opacity: 1;
+    }
+
+    .projects-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.4);
+    }
+
   @media (prefers-color-scheme: light) {
   
-    #about-card {
+    #projects-card {
       backdrop-filter: none;
       -webkit-backdrop-filter: none;
       background-color: rgba(216, 216, 216, 0.585);
       border-color: rgb(157, 157, 157);
     }
   
-    #about-card:hover {
+    #projects-card:hover {
       box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.35);
     }
     
+    .projects-btn {
+        padding: 1em 2.5em;
+        border: none;
+        background-color: rgb(187, 187, 187);
+        border-radius: 1rem;
+        transition: all 500ms ease;
+        box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+        transform: scale(1);
+      }
+
+    .projects-btn:hover {
+        background-color: rgb(56, 56, 56);
+    }
+
+    .projects-btn:hover #github {
+        color: white;
+    }
   }

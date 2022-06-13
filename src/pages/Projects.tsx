@@ -1,37 +1,50 @@
 import { 
     IonContent,
     IonNote,
-    IonLabel
+    IonLabel,
 } from '@ionic/react';
 import './Projects.css';
 import ProjectsContainer from '../components/ProjectsCard';
 import {Fragment} from 'react'
+import { logoNodejs } from 'ionicons/icons';
 
-interface Languages {
-    language: string;
-    timeUsed: string;
+interface Projects {
+    project: string;
+    languageUsed: string;
     url: string;
     description: string;
+    languageImgIos: string;
+    languageImgMd: string;
+    projectImg: string;
 }
 
-const languagesList: Languages[] = [
+const projectsList: Projects[] = [
     {
-        language: "Javascript",
-        timeUsed: '1 year',
-        url: 'https://github.com/acquitelol/',
-        description: "I have built many projects with JS including this website with React, a Rich Presence Graphical Application built for mac, and many more."
+        project: 'Gluta',
+        languageUsed: 'JavaScript',
+        url: 'https://github.com/acquitelol/gluta/',
+        description: "This program is a custom discord Rich Presence previewer and creator which resembles Discord's layout perfectly but is instead recreated by hand. It is built in Electron with JS.",
+        languageImgIos: logoNodejs,
+        languageImgMd: logoNodejs,
+        projectImg: "./images/gluta.png"
     },
     {
-        language: "Python",
-        timeUsed: '2 years',
-        url: 'https://github.com/acquitelol/',
-        description: "I've used Python for building simple programs such as Base64 Decoders and Session Request Senders. I have a good undestanding of the syntax as a result."
+        project: 'Gluta',
+        languageUsed: 'JavaScript',
+        url: 'https://github.com/acquitelol/gluta/',
+        description: "This program is a custom discord Rich Presence previewer and creator which resembles Discord's layout perfectly but is instead recreated by hand. It is built in Electron with JS.",
+        languageImgIos: logoNodejs,
+        languageImgMd: logoNodejs,
+        projectImg: "./images/gluta.png"
     },
     {
-        language: "Breathing air",
-        timeUsed: '14 years',
-        url: 'https://github.com/acquitelol/',
-        description: "I very much enjoy breathing air. It is my life hobby. I have always enjoyed to breathe air, and have done it my entire life. Breathing air is extremely healthy for you."
+        project: 'Gluta',
+        languageUsed: 'JavaScript',
+        url: 'https://github.com/acquitelol/gluta/',
+        description: "This program is a custom discord Rich Presence previewer and creator which resembles Discord's layout perfectly but is instead recreated by hand. It is built in Electron with JS.",
+        languageImgIos: logoNodejs,
+        languageImgMd: logoNodejs,
+        projectImg: "./images/gluta.png"
     }
 ]
 
@@ -41,29 +54,38 @@ const Page: React.FC = () => {
         <Fragment>
                 <hr></hr>
             <IonContent data-type='content1'>
+                <div className='mainTitle'>
                 <IonLabel id='title' className='padding-custom'>
                     This is the <strong>Projects</strong> Page. 🪐
-                </IonLabel> <br></br>
-                <IonNote id='sub' className='padding-custom'>
-                    Welcome to the Projects route of my <strong>testing</strong> site built in react.
-                </IonNote>
-            </IonContent>
-
-            <div className={`about-cards`}>
-                    {languagesList.map((language, index) => {
+                </IonLabel> </div> <br></br>
+                <div className='subTitle'> 
+                    <div className='pos'>
+                        <IonNote id='sub' className='padding-custom'>
+                            Welcome to the Projects route of my <strong>testing</strong> site built in react.
+                        </IonNote> 
+                    </div> 
+                </div>
+                <div className={`projects-cards`}>
+                    {projectsList.map((project, index) => {
                         return (
                             <div key={index} className={`${index===1 ? 'rotation' : 'rotation-flipped'}`} >
                                 <ProjectsContainer 
                                     key={index} 
-                                    language={language.language} 
-                                    timeUsed={language.timeUsed} 
-                                    project={language.url} 
-                                    description={language.description}
+                                    project={project.project} 
+                                    languageUsed={project.languageUsed} 
+                                    url={project.url} 
+                                    description={project.description}
+                                    iosIcon={project.languageImgIos}
+                                    mdIcon={project.languageImgMd}
+                                    projectIcon={project.projectImg}
                                 />
                             </div>
                         )
                     })}
-            </div>
+                </div>
+            </IonContent>
+
+           
         </Fragment>
     );
   };
